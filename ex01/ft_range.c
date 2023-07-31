@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stesfai <stesfai@student.42.ch>            +#+  +:+       +#+        */
+/*   By: stesfai <stesfai@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 19:26:09 by stesfai           #+#    #+#             */
-/*   Updated: 2023/07/26 22:15:23 by stesfai          ###   ########.fr       */
+/*   Updated: 2023/07/29 18:05:31 by stesfai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	*ft_range(int min, int max)
 	return (ptr);
 }
 
-/*Used for debugging*/
+/*Used for debugging
 #include <limits.h>
 #include <stdio.h>
 int main(void)
@@ -69,4 +69,4 @@ int main(void)
 		i++;
 	}
 	free(range);
-}
+}*/

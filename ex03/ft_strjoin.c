@@ -6,7 +6,7 @@
 /*   By: stesfai <stesfai@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 20:12:57 by stesfai           #+#    #+#             */
-/*   Updated: 2023/07/29 23:09:31 by stesfai          ###   ########.fr       */
+/*   Updated: 2023/07/31 13:02:15 by stesfai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ strs separated by sep.
 •if size is 0, you must return an empty string that you can free().
 •Here’s how it should be prototyped :
 char *ft_strjoin(int size, char **strs, char *sep);
+**************************************************************************
+Remove 1 from size when the last char need to be treated differently
+Sep or ending char
 */
 #include <stdlib.h> //Used for malloc()
 
@@ -51,32 +54,26 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	char	*strjoined;
 
 	i = 0;
-	strjoined = malloc((size * 2 - 1) * sizeof(char));
+	strjoined = "";
+	strjoined = malloc((size * 2) * sizeof(char));
 	if (size == 0)
-	{
 		return (strjoined);
-		free(strjoined);
-	}
-	else
+	while (i < size)
 	{
-		while (i < size)
-		{
-			ft_strcat(&strjoined[i], strs[i]);
+		ft_strcat(&strjoined[i], strs[i]);
+		if (i != (size - 1))
 			ft_strcat(&strjoined[i], sep);
-			i++;
-		}
-		return (strjoined);
-		free(strjoined);
+		i++;
 	}
+	return (strjoined);
 }
 
-/*Used for debugging*/
+/*Used for debugging
 #include <stdio.h>
 int	main(void)
 {
-	char	*sep = "x";
-	char	*strs[] = {"Hello", "42", "Lausanne", "!!!"};
+	char	*sep = "🦎";
+	char	*strs[] = {"King", "Gizzard", "&", "The", "Lizard", "Wizard"};
 	int		size = sizeof(strs)/sizeof(strs[0]);
-
 	puts(ft_strjoin(size, strs, sep));
-}
+}*/
