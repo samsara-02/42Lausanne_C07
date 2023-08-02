@@ -6,7 +6,7 @@
 /*   By: stesfai <stesfai@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 23:20:55 by stesfai           #+#    #+#             */
-/*   Updated: 2023/07/30 14:27:58 by stesfai          ###   ########.fr       */
+/*   Updated: 2023/08/01 17:34:17 by stesfai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ be prefix only by a single and uniq ’-’ if necessary, no whitespaces, no ’
 •Here’s how it should be prototyped :
 char *ft_convert_base(char *nbr, char *base_from, char *base_to)
  */
+
 #include <stdlib.h> //Required for free(), malloc()
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)

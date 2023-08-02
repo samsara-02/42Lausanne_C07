@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stesfai <stesfai@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/29 20:12:57 by stesfai           #+#    #+#             */
-/*   Updated: 2023/07/31 13:02:15 by stesfai          ###   ########.fr       */
+/*   Created: 2023/07/28 20:12:57 by stesfai           #+#    #+#             */
+/*   Updated: 2023/08/02 16:41:50 by stesfai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@ Remove 1 from size when the last char need to be treated differently
 Sep or ending char
 */
 #include <stdlib.h> //Used for malloc()
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 char	*ft_strcat(char *dest, char *src)
 {
@@ -51,11 +61,11 @@ char	*ft_strcat(char *dest, char *src)
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	int		i;
+	int		total_length;
 	char	*strjoined;
 
 	i = 0;
-	strjoined = "";
-	strjoined = malloc((size * 2) * sizeof(char));
+	total_length = 0;
 	if (size == 0)
 		return (strjoined);
 	while (i < size)
@@ -68,12 +78,13 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (strjoined);
 }
 
-/*Used for debugging
+/*Used for debugging*/
 #include <stdio.h>
 int	main(void)
 {
 	char	*sep = "🦎";
 	char	*strs[] = {"King", "Gizzard", "&", "The", "Lizard", "Wizard"};
+	//char	*strs[] = { "Hello", "world", "!" };
 	int		size = sizeof(strs)/sizeof(strs[0]);
 	puts(ft_strjoin(size, strs, sep));
-}*/
+}
